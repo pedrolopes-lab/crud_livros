@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/pedro/estudos_gerais/crud_livros2/clivros_dotnetapi/clivros_api.csproj": {}
+    "/home/pedro/estudos_gerais/crud_livros/clivros_dotnetapi/clivros_api.csproj": {}
   },
   "projects": {
-    "/home/pedro/estudos_gerais/crud_livros2/clivros_dotnetapi/clivros_api.csproj": {
+    "/home/pedro/estudos_gerais/crud_livros/clivros_dotnetapi/clivros_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pedro/estudos_gerais/crud_livros2/clivros_dotnetapi/clivros_api.csproj",
+        "projectUniqueName": "/home/pedro/estudos_gerais/crud_livros/clivros_dotnetapi/clivros_api.csproj",
         "projectName": "clivros_api",
-        "projectPath": "/home/pedro/estudos_gerais/crud_livros2/clivros_dotnetapi/clivros_api.csproj",
+        "projectPath": "/home/pedro/estudos_gerais/crud_livros/clivros_dotnetapi/clivros_api.csproj",
         "packagesPath": "/home/pedro/.nuget/packages/",
-        "outputPath": "/home/pedro/estudos_gerais/crud_livros2/clivros_dotnetapi/obj/",
+        "outputPath": "/home/pedro/estudos_gerais/crud_livros/clivros_dotnetapi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/pedro/.nuget/NuGet/NuGet.Config"

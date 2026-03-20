@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y0H7L80V+Vg=",
+  "dgSpecHash": "qTB9jRTpjx0=",
   "success": true,
-  "projectFilePath": "/home/pedro/estudos_gerais/crud_livros2/clivros_dotnetapi/clivros_api.csproj",
+  "projectFilePath": "/home/pedro/estudos_gerais/crud_livros/clivros_dotnetapi/clivros_api.csproj",
   "expectedPackageFiles": [
     "/home/pedro/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/10.0.5/microsoft.aspnetcore.authentication.jwtbearer.10.0.5.nupkg.sha512",
