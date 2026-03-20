@@ -1,0 +1,37 @@
+[
+  {
+    "nome": "Clean Code",
+    "autor": "Robert C. Martin",
+    "categoria": "Tecnologia",
+    "totalPaginas": 431,
+    "ativo": true
+  },
+  {
+    "nome": "O Programador Pragmático",
+    "autor": "Andrew Hunt",
+    "categoria": "Tecnologia",
+    "totalPaginas": 352,
+    "ativo": true
+  },
+  {
+    "nome": "Domain-Driven Design",
+    "autor": "Eric Evans",
+    "categoria": "Tecnologia",
+    "totalPaginas": 560,
+    "ativo": true
+  },
+  {
+    "nome": "Arquitetura Limpa",
+    "autor": "Robert C. Martin",
+    "categoria": "Tecnologia",
+    "totalPaginas": 432,
+    "ativo": true
+  },
+  {
+    "nome": "Refactoring",
+    "autor": "Martin Fowler",
+    "categoria": "Tecnologia",
+    "totalPaginas": 448,
+    "ativo": false
+  }
+]
