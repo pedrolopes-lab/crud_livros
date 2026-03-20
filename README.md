@@ -1,87 +1,123 @@
-CRUD Livros — Sistema de Gerenciamento de Livros
+# 📚 CRUD Livros — Sistema de Gerenciamento de Livros
+
 Sistema SPA Full-Stack para gerenciamento de livros com autenticação JWT.
-Tecnologias
-Frontend
 
-Angular 21+
-Angular Signals
-Reactive Forms
-Route Guards e HTTP Interceptors
+---
 
-Backend
+## 🛠️ Tecnologias
 
-.NET 10
-Entity Framework Core (InMemory)
-JWT
+### Frontend
+- Angular 21+
+- Angular Signals
+- Reactive Forms
+- Route Guards e HTTP Interceptors
 
-Estrutura do Projeto
+### Backend
+- .NET 10
+- Entity Framework Core (InMemory)
+- JWT Authentication
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
 crud_livros/
-├── clivos_angular/          → Frontend Angular
+├── clivos_angular/         → Frontend Angular
 │   └── src/app/
 │       ├── core/
-│       │   ├── guards/      → AuthGuard
-│       │   ├── interceptors/→ AuthInterceptor
-│       │   ├── models/      → interfaces TypeScript
-│       │   └── services/    → LivroService, AuthService
+│       │   ├── guards/         → AuthGuard
+│       │   ├── interceptors/   → AuthInterceptor
+│       │   ├── models/         → Interfaces TypeScript
+│       │   └── services/       → LivroService, AuthService
 │       ├── features/
-│       │   ├── login/       → tela de login
-│       │   └── books/       → listagem e CRUD de livros
+│       │   ├── login/          → Tela de login
+│       │   └── books/          → Listagem e CRUD de livros
 │       └── shared/
-│           └── header/      → header reutilizável
-└── clivros_api/             → Backend .NET
-    ├── Controllers/         → AuthController, LivroController
-    ├── Application/         → LivroService, ILivroService
-    ├── Domain/              → Livro, ILivroRepository
-    ├── Infrastructure/      → LivroRepository, AppDbContext
-    └── DTOs/                → CreateLivroDTO, LivroResponseDTO
-Funcionalidades
+│           └── header/         → Header reutilizável
+│
+└── clivros_dotnetapi/      → Backend .NET
+    ├── Controllers/            → AuthController, LivroController
+    ├── Application/            → LivroService, ILivroService
+    ├── Domain/                 → Livro, ILivroRepository
+    ├── Infrastructure/         → LivroRepository, AppDbContext
+    └── DTOs/                   → CreateLivroDTO, LivroResponseDTO
+```
 
-Login protegido por JWT
-Listagem de livros com filtro em tempo real por nome, autor e categoria
-Cadastro e edição de livros com validações
-Remoção de livros — regra: não é permitido remover livro ativo
-Rotas protegidas por Guard
-Token JWT anexado automaticamente via Interceptor
+---
 
-Como Executar
-Pré-requisitos
+## ✅ Funcionalidades
 
-Node.js
-Angular CLI
-.NET SDK 10+
+- Login protegido por JWT
+- Listagem de livros com filtro em tempo real por nome, autor e categoria
+- Cadastro e edição de livros com validações
+- Remoção de livros — **regra: não é permitido remover livro ativo**
+- Rotas protegidas por Guard
+- Token JWT anexado automaticamente via Interceptor
 
-1. Inicia o backend:
-bashcd clivros_api
+---
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- Node.js
+- Angular CLI
+- .NET SDK 10+
+
+### 1. Inicie o backend
+
+```bash
+cd clivros_dotnetapi
 dotnet run
-2. Em outro terminal, inicia o frontend:
-bashcd clivos_angular
+```
+
+### 2. Em outro terminal, inicie o frontend
+
+```bash
+cd clivos_angular
 ng serve
 ```
 
-**3. Acessa no browser:**
+### 3. Acesse no browser
+
 ```
 http://localhost:4200
 ```
 
-**4. Credenciais:**
+### 4. Credenciais de acesso
+
 ```
 email: admin@admin.com
 senha: admin123
-Observações
+```
 
-O banco de dados é InMemory — os dados são perdidos ao reiniciar o servidor
-Para popular o banco use o Postman com POST para http://localhost:5013/api/Livro
+---
 
-Regras de Negócio
+## ⚠️ Observações
 
-Não é permitido remover um livro com status Ativo
-Nome e Autor são obrigatórios — máximo 50 caracteres
-Total de Páginas deve ser maior que 0
-Categoria é opcional — dropdown com lista fixa
+- O banco de dados é **InMemory** — os dados são perdidos ao reiniciar o servidor
+- Para popular o banco, use o Postman com `POST` para:
+  ```
+  http://localhost:5013/api/Livro
+  ```
 
-Princípios Aplicados
+---
 
-SOLID — Single Responsibility, Dependency Inversion
-Clean Code — nomes claros, responsabilidades bem definidas
-Repository Pattern — abstração do acesso ao banco
-Injeção de Dependência — IoC via .NET DI Container
+## 📏 Regras de Negócio
+
+| Regra | Descrição |
+|---|---|
+| Remoção | Não é permitido remover um livro com status **Ativo** |
+| Nome e Autor | Obrigatórios — máximo de 50 caracteres |
+| Total de Páginas | Deve ser maior que 0 |
+| Categoria | Opcional — dropdown com lista fixa |
+
+---
+
+## 🧱 Princípios Aplicados
+
+- **SOLID** — Single Responsibility, Dependency Inversion
+- **Clean Code** — nomes claros, responsabilidades bem definidas
+- **Repository Pattern** — abstração do acesso ao banco
+- **Injeção de Dependência** — IoC via .NET DI Container
