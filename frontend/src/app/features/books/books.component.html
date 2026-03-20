@@ -1,0 +1,97 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <!-- barra de pesquisa e botão novo livro -->
+  <div class="toolbar">
+    <input
+      type="text"
+      placeholder="Pesquisar por nome, autor ou categoria..."
+      (input)="filtro.set($any($event.target).value)"
+    />
+    <button (click)="novoLivro()">+ Novo Livro</button>
+  </div>
+
+  <!-- tabela de livros -->
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Autor</th>
+        <th>Categoria</th>
+        <th>Total de Páginas</th>
+        <th *ngIf="authService.isLoggedIn()">Ativo</th>
+        <th *ngIf="authService.isLoggedIn()">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livrosFiltrados()">
+        <td>{{ livro.nome }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.categoria || '-' }}</td>
+        <td>{{ livro.totalPaginas }}</td>
+        <td *ngIf="authService.isLoggedIn()">
+          {{ livro.ativo ? 'Ativo' : 'Inativo' }}
+        </td>
+        <td *ngIf="authService.isLoggedIn()">
+          <button (click)="editarLivro(livro)">Editar</button>
+          <button (click)="removerLivro(livro.id)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- formulário de cadastro/edição -->
+  <div class="modal" *ngIf="mostrarFormulario()">
+    <div class="modal-content">
+      <h2>{{ livroEditando() ? 'Editar Livro' : 'Novo Livro' }}</h2>
+
+      <form [formGroup]="livroForm" (ngSubmit)="salvar()">
+
+        <div class="field">
+          <label>Nome</label>
+          <input formControlName="nome" type="text" />
+          <span *ngIf="livroForm.get('nome')?.invalid && livroForm.get('nome')?.touched">
+            Obrigatório, máximo 50 caracteres
+          </span>
+        </div>
+
+        <div class="field">
+          <label>Autor</label>
+          <input formControlName="autor" type="text" />
+          <span *ngIf="livroForm.get('autor')?.invalid && livroForm.get('autor')?.touched">
+            Obrigatório, máximo 50 caracteres
+          </span>
+        </div>
+
+        <div class="field">
+          <label>Categoria</label>
+          <select formControlName="categoria">
+            <option value="">Selecione...</option>
+            <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Total de Páginas</label>
+          <input formControlName="totalPaginas" type="number" />
+          <span *ngIf="livroForm.get('totalPaginas')?.invalid && livroForm.get('totalPaginas')?.touched">
+            Obrigatório, maior que 0
+          </span>
+        </div>
+
+        <div class="field">
+          <label>Ativo</label>
+          <input formControlName="ativo" type="checkbox" />
+        </div>
+
+        <div class="buttons">
+          <button type="button" (click)="cancelar()">Cancelar</button>
+          <button type="submit" [disabled]="livroForm.invalid">Salvar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

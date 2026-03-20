@@ -1,0 +1,10 @@
+<header>
+  <span>CRUD Livros</span>
+
+  <nav>
+    <!-- exibe botão de logout se estiver logado -->
+    <button *ngIf="isLoggedIn()" (click)="logout()">
+      Logout
+    </button>
+  </nav>
+</header>
