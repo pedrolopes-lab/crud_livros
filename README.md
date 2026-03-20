@@ -14,7 +14,7 @@ Sistema SPA Full-Stack para gerenciamento de livros com autenticação JWT.
 
 ### Backend
 - .NET 10
-- Entity Framework Core (InMemory)
+- Entity Framework Core + MySQL
 - JWT Authentication
 
 ---
@@ -64,6 +64,7 @@ crud_livros/
 - Node.js
 - Angular CLI
 - .NET SDK 10+
+- MySQL Server
 
 ### 1. Inicie o backend
 
@@ -96,10 +97,7 @@ senha: admin123
 
 ## ⚠️ Observações
 
-- O banco de dados é **InMemory** — os dados são perdidos ao reiniciar o servidor
-- Para popular o banco, use o Postman com `POST` para:
-  ```
-  http://localhost:5013/api/Livro
+- O banco de dados é **MySQL** — certifique-se de que o serviço está rodando antes de iniciar o backend (`sudo systemctl start mysql`)
   ```
 
 ---
