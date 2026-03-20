@@ -23,7 +23,7 @@ Sistema SPA Full-Stack para gerenciamento de livros com autenticação JWT.
 
 ```
 crud_livros/
-├── clivos_angular/         → Frontend Angular
+├── clivros_angular/         → Frontend Angular
 │   └── src/app/
 │       ├── core/
 │       │   ├── guards/         → AuthGuard
@@ -76,7 +76,7 @@ dotnet run
 ### 2. Em outro terminal, inicie o frontend
 
 ```bash
-cd clivos_angular
+cd clivros_angular
 ng serve
 ```
 
